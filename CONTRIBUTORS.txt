@@ -9,5 +9,9 @@
 # they accept any liabilities with respect to them.
 
 - Rafael Corchuelo (corchu@us.es)
+
 - Pablo Giráldez Álvarez (pabgiralv@alum.us.es)
 - Álvaro Paradas Borrego (alvparbor1@alum.us.es)
+- Ginés Pastor Fernández (ginpasfer@alum.us.es)
+- Antonio Manuel Solís Miranda (antsolmir@alum.us.es)
+- Badayco Rijo Hernández (badrijher@alum.us.es)
