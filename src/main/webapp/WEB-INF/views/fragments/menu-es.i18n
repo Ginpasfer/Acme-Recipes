@@ -18,8 +18,7 @@ master.menu.sign-out = Salir
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
-master.menu.anonymous.pablo = 80101033Z:Giráldez,Pablo
-master.menu.anonymous.alvaro = 44053812A:Paradas,Álvaro
+master.menu.anonymous.favourite-link = Enlace favorito
 
 # master.menu.administrator ###################################################
 
