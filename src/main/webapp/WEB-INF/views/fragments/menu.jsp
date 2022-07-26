@@ -19,8 +19,10 @@
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.anonymous.pablo" action="https://www.youtube.com/"/>
-			<acme:menu-suboption code="master.menu.anonymous.pablo" action="https://www.linkedin.com/in/alvaro-paradas-borrego-756661206/"/>
+			<acme:menu-suboption code="master.menu.anonymous.pablo" action="https://github.com/Pabgiralv"/>
+			<acme:menu-suboption code="master.menu.anonymous.ginpasfer" action="https://github.com/Ginpasfer"/>
+			<acme:menu-suboption code="master.menu.anonymous.antonio" action="https://github.com/antsolismir"/>
+			<acme:menu-suboption code="master.menu.anonymous.badayco" action="https://github.com/badrijher"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
