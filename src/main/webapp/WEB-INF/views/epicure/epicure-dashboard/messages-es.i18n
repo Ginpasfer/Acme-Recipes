@@ -3,7 +3,7 @@ epicure.epicure-dashboard.form.label.max-budget-by-currency-and-status = Presupu
 epicure.epicure-dashboard.form.label.min-budget-by-currency-and-status= Presupuesto mínimo 
 epicure.epicure-dashboard.form.label.deviation-of-budgets-by-currency-and-status= Desviación de presupuestos 
 epicure.epicure-dashboard.form.label.average-number-of-budgets-by-currency-and-status= Media de presupuestos 
-epicure.epicure-dashboard.form.label.number-of-fineDishes-by-status= Número de platos finos
+epicure.epicure-dashboard.form.label.number-of-dishes-by-status= Número de platos
 epicure.epicure-dashboard.form.title.general-indicators = Indicadores generales
 
 epicure.dashboard.form.status.PROPOSED = Propuestos

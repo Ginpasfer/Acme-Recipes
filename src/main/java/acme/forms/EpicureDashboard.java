@@ -18,7 +18,7 @@ public class EpicureDashboard implements Serializable{
 	private static final long		serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
-	Map<Status, Integer> numberOfFineDishesByStatus;
+	Map<Status, Integer> numberOfDishesByStatus;
 
 	Map<Pair<Status, String>, Double>	averageNumberOfBudgetsByCurrencyAndStatus;
 

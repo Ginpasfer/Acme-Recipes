@@ -38,15 +38,15 @@ public class EpicureDashboardShowService implements AbstractShowService<Epicure,
 
 		final EpicureDashboard res;
 		
-		final Map<Status, Integer> numberOfFineDishesByStatus = new EnumMap<>(Status.class);
+		final Map<Status, Integer> numberOfDishesByStatus = new EnumMap<>(Status.class);
 		
-		final Integer numberOfProposedFineDishes = this.repository.numFineDishByStatus(Status.PROPOSED);
-		final Integer numberOfAcceptedFineDishes = this.repository.numFineDishByStatus(Status.ACCEPTED);
-		final Integer numberOfDeniedFineDishes = this.repository.numFineDishByStatus(Status.DENIED);
+		final Integer numberOfProposedDishes = this.repository.numDishByStatus(Status.PROPOSED);
+		final Integer numberOfAcceptedDishes = this.repository.numDishByStatus(Status.ACCEPTED);
+		final Integer numberOfDeniedDishes = this.repository.numDishByStatus(Status.DENIED);
 		
-		numberOfFineDishesByStatus.put(Status.PROPOSED, numberOfProposedFineDishes);
-		numberOfFineDishesByStatus.put(Status.ACCEPTED, numberOfAcceptedFineDishes);
-		numberOfFineDishesByStatus.put(Status.DENIED, numberOfDeniedFineDishes);
+		numberOfDishesByStatus.put(Status.PROPOSED, numberOfProposedDishes);
+		numberOfDishesByStatus.put(Status.ACCEPTED, numberOfAcceptedDishes);
+		numberOfDishesByStatus.put(Status.DENIED, numberOfDeniedDishes);
 		
 		final Map<Pair<Status, String>, Double> averageNumberOfBudgetsByCurrencyAndStatus = new HashMap<Pair<Status,String>, Double>();
 		final List<String> avgBudgetByCurrencyAccep = this.repository.averageNumberOfBudgetsByCurrencyAndStatus(Status.ACCEPTED);
@@ -128,7 +128,7 @@ public class EpicureDashboardShowService implements AbstractShowService<Epicure,
 		
 		
 		res = new EpicureDashboard();
-		res.setNumberOfFineDishesByStatus(numberOfFineDishesByStatus);
+		res.setNumberOfDishesByStatus(numberOfDishesByStatus);
 		res.setAverageNumberOfBudgetsByCurrencyAndStatus(averageNumberOfBudgetsByCurrencyAndStatus);
 		res.setDeviationOfBudgetsByCurrencyAndStatus(deviationOfBudgetsByCurrencyAndStatus);
 		res.setMinBudgetByCurrencyAndStatus(minBudgetByCurrencyAndStatus);
@@ -144,7 +144,7 @@ public class EpicureDashboardShowService implements AbstractShowService<Epicure,
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model,"numberOfFineDishesByStatus", "averageNumberOfBudgetsByCurrencyAndStatus",
+		request.unbind(entity, model,"numberOfDishesByStatus", "averageNumberOfBudgetsByCurrencyAndStatus",
 			"deviationOfBudgetsByCurrencyAndStatus", "minBudgetByCurrencyAndStatus","maxBudgetByCurrencyAndStatus");
 	
 	}

@@ -23,14 +23,14 @@
 		<div class="column-50">
 			<h3>
 				<acme:message
-					code="epicure.epicure-dashboard.form.label.number-of-fineDishes-by-status" />
+					code="epicure.epicure-dashboard.form.label.number-of-dishes-by-status" />
 			</h3>
 			<table class="table table-sm">
 			<caption></caption>
-				<jstl:forEach items="${ numberOfFineDishesByStatus.keySet() }"
+				<jstl:forEach items="${ numberOfDishesByStatus.keySet() }"
 					var="key">
 					<tr>
-						<jstl:set value="${ numberOfFineDishesByStatus.get(key) }"
+						<jstl:set value="${ numberOfDishesByStatus.get(key) }"
 							var="amount" />
 						<jstl:if test="${ amount>0 }">
 							<th scope="row" style="width: 15%"><acme:message
@@ -137,7 +137,7 @@
 		<div class="column-50">
 			<h3>
 				<acme:message
-					code="epicure.epicure-dashboard.form.label.number-of-fineDishes-by-status" />
+					code="epicure.epicure-dashboard.form.label.number-of-dishes-by-status" />
 			</h3>
 			<br>
 			<canvas id="total-canvas"></canvas>
@@ -184,16 +184,16 @@
 </acme:form>
 
 <script type="text/javascript">
-   var numberOfFineDishesByStatus = {
-   	<jstl:forEach items="${numberOfFineDishesByStatus}" var="item" varStatus="loop">
+   var numberOfDishesByStatus = {
+   	<jstl:forEach items="${numberOfDishesByStatus}" var="item" varStatus="loop">
    	      ${item.key}: '${item.value}' ${not loop.last ? ',' : ''}
    	</jstl:forEach>
    };
    
    const total_data = {
-     labels: Object.keys(numberOfFineDishesByStatus),
+     labels: Object.keys(numberOfDishesByStatus),
      datasets: [{
-       data: Object.values(numberOfFineDishesByStatus),
+       data: Object.values(numberOfDishesByStatus),
        backgroundColor: [
     	   'rgb(254, 136, 127)',
      	  'rgb(136, 255, 114)',

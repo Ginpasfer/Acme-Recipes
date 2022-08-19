@@ -3,7 +3,7 @@ epicure.epicure-dashboard.form.label.max-budget-by-currency-and-status = Max bud
 epicure.epicure-dashboard.form.label.min-budget-by-currency-and-status= Min budget 
 epicure.epicure-dashboard.form.label.deviation-of-budgets-by-currency-and-status= Deviation of budgets 
 epicure.epicure-dashboard.form.label.average-number-of-budgets-by-currency-and-status= Average number of budget 
-epicure.epicure-dashboard.form.label.number-of-fineDishes-by-status= Number of Fine Dishes
+epicure.epicure-dashboard.form.label.number-of-dishes-by-status= Number of Dishes
 epicure.epicure-dashboard.form.title.general-indicators = General indicators
 
 epicure.dashboard.form.status.PROPOSED = Proposed
