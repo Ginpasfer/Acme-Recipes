@@ -68,7 +68,7 @@ public class AuthenticatedChefUpdateService implements AbstractUpdateService<Aut
 		principal = request.getPrincipal();
 		userAccountId = principal.getAccountId();
 
-		result = this.repository.findOnechefByUserAccountId(userAccountId);
+		result = this.repository.findOneChefByUserAccountId(userAccountId);
 
 		return result;
 	}
