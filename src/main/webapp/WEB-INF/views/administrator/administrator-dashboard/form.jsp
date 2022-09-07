@@ -14,7 +14,7 @@
 </h2>
 
 <table class="table table-sm">
-	<jstl:forEach items="${ currency }" var="currency">
+	<jstl:forEach items="${ currencyU }" var="currency">
 
 		<tr>
 			<th scope="row"><acme:print value="${ currency }" /></th>
@@ -94,7 +94,7 @@
 </h2>
 
 <table class="table table-sm">
-	<jstl:forEach items="${ currency }" var="currency">
+	<jstl:forEach items="${ currencyI }" var="currency">
 
 		<tr>
 			<th scope="row"><acme:print value="${ currency }" /></th>
