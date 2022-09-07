@@ -220,8 +220,13 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 				"minimunBudgetOfPimpamGroupedByCurrency",
 				"maximunBudgetOfPimpamGroupedByCurrency");
 		
-		final Set<String> currency = entity.getDeviationRetailPriceOfIngredientsGroupedByCurrency().keySet();
-		model.setAttribute("currency", currency);
+		final Set<String> currencyIngredients = entity.getDeviationRetailPriceOfIngredientsGroupedByCurrency().keySet();
+        final Set<String> currencyUtensil = entity.getDeviationRetailPriceOfKitchenUtensilsGroupedByCurrency().keySet();
+        final Set<String> currencyPimpam = entity.getDeviationBudgetOfPimpamGroupedByCurrency().keySet();
+
+        model.setAttribute("currencyI", currencyIngredients);
+        model.setAttribute("currencyU", currencyUtensil);
+        model.setAttribute("currencyP", currencyPimpam);
 
 	}
 
