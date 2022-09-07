@@ -57,6 +57,7 @@ public class ChefPimpamShowService implements AbstractShowService<Chef, Pimpam> 
 		model.setAttribute("itemName", entity.getItem().getName());
 		model.setAttribute("items", this.repository.findAllItemsOfChef(request.getPrincipal().getActiveRoleId()));
 		model.setAttribute("itemId", entity.getItem().getId());
+		model.setAttribute("itemPublished", entity.getItem().getPublished());
 		
 //		final String systemCurrency= this.repository.getDefaultCurrency();
 //		 MoneyExchange priceExchanged = null;

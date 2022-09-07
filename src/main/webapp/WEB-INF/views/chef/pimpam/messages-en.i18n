@@ -12,7 +12,9 @@ chef.pimpam.form.button.update = Update
 chef.pimpam.form.button.delete = Delete
 chef.pimpam.form.button.create = Create
 
+
 chef.pimpam.form.error.retail-price-currency-invalid = This currency is not allowed
 chef.pimpam.form.error.retail-price-amount-negative-or-zero = The amount can not be negative or zero
 chef.pimpam.form.error.duplicated = This code already exist
 chef.pimpam.form.error.enlace = The link format is invalid
+chef.pimpam.form.error.one-week = At least one week long

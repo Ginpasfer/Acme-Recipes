@@ -14,14 +14,12 @@ import acme.entities.pimpam.Pimpam;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
-import acme.framework.services.AbstractCreateService;
+import acme.framework.services.AbstractUpdateService;
 import acme.roles.Chef;
 
-
-
 @Service
-public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimpam> {
-
+public class ChefPimpamUpdateService implements AbstractUpdateService<Chef, Pimpam> {
+	
 	@Autowired
 	protected ChefPimpamRepository repository;
 	
@@ -30,7 +28,16 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 	public boolean authorise(final Request<Pimpam> request) {
 		assert request != null;
 
-		return true;
+		boolean result;
+		int id;
+		Pimpam pimpam;
+		Chef chef;
+
+		id = request.getModel().getInteger("id");
+		pimpam = this.repository.findPimpamById(id);
+		chef = pimpam.getItem().getChef();
+		result = !pimpam.getItem().getPublished() && request.isPrincipal(chef);
+		return result;
 	}
 
 	@Override
@@ -38,12 +45,6 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
-		Date moment;
-		moment = new Date(System.currentTimeMillis() - 1);
-		entity.setFechaCreacion(moment);
-		entity.setItem(this.repository.findItemById(Integer.valueOf(request.getModel().getAttribute("itemId").toString())));
-
 		
 		request.bind(entity, errors, "codigo", "titulo", "descripcion", "periodoInicial", "periodoFinal" ,"presupuesto", "enlace");
 	}
@@ -54,37 +55,23 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 		assert entity != null;
 		assert model != null;
 		
-		model.setAttribute("items", this.repository.findAllItemsOfChef(request.getPrincipal().getActiveRoleId()));
-		
-		request.unbind(entity, model, "codigo", "fechaCreacion", "titulo", "descripcion", "periodoInicial", "periodoFinal" ,"presupuesto", "enlace");
+		model.setAttribute("itemName", entity.getItem().getName());
+		model.setAttribute("itemPublished", entity.getItem().getPublished());
+		request.unbind(entity, model, "codigo", "titulo", "fechaCreacion", "descripcion", "periodoInicial", "periodoFinal" ,"presupuesto", "enlace");
 	}
 
 	@Override
-	public Pimpam instantiate(final Request<Pimpam> request) {
+	public Pimpam findOne(final Request<Pimpam> request) {
 		assert request != null;
 
-		final Pimpam result;
-		Date moment;
-		moment = new Date(System.currentTimeMillis() - 1);
-		
-		Date initialD;
-		Date finalD;
+		Pimpam result;
+		int id;
 
-		initialD = DateUtils.addMonths( new Date(System.currentTimeMillis() + 300000),1);
-		finalD = DateUtils.addWeeks( initialD,1);
-		finalD = DateUtils.addMinutes(finalD, 1);
-
-	
-		result = new Pimpam();
-		result.setCodigo("");
-		result.setFechaCreacion(moment);
-		result.setTitulo("");
-		result.setDescripcion("");
-		result.setPeriodoInicial(initialD);
-		result.setPeriodoFinal(finalD);
-		result.setEnlace("");
+		id = request.getModel().getInteger("id");
+		result = this.repository.findPimpamById(id);
 
 		return result;
+
 	}
 
 	@Override
@@ -95,9 +82,14 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 		
 		if (!errors.hasErrors("codigo")) {
 			Pimpam existing;
-
+			int masterId;
+			masterId = request.getModel().getInteger("id");
 			existing = this.repository.findPimpamByCode(entity.getCodigo());
-			errors.state(request, existing == null, "codigo", "chef.item.form.error.duplicated");
+			if(this.repository.findPimpamById(masterId).equals(existing)) {
+				
+			}else {
+				errors.state(request, existing == null, "codigo", "chef.item.form.error.duplicated");
+			}
 		}
 		
 		if(!errors.hasErrors("enlace")) {
@@ -114,13 +106,12 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 			errors.state(request,entity.getPeriodoInicial().after(minInitialDate), "periodoInicial", "epicure.dish.form.error.too-close-start-date");
 			
 		}
-		if(!errors.hasErrors("periodoFinal") && !errors.hasErrors("initialPeriodDate")) {
+		if(!errors.hasErrors("periodoFinal") && !errors.hasErrors("periodoInicial")) {
 			final Date minFinishDate=DateUtils.addWeeks(entity.getPeriodoInicial(), 1);
 			
 			errors.state(request,entity.getPeriodoFinal().after(minFinishDate), "periodoFinal", "chef.pimpam.form.error.one-week");
 			
 		}
-		
 		
 		
 		if(!errors.hasErrors("presupuesto")) {
@@ -144,16 +135,14 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 			final boolean isDescriptionSpam = SpamDetector.isSpam(entity.getDescripcion(), this.repository.getSystemConfiguration());
 			errors.state(request, !isDescriptionSpam, "descripcion", "Description contains spam");
 		}
-		
 	}
 
 	@Override
-	public void create(final Request<Pimpam> request, final Pimpam entity) {
+	public void update(final Request<Pimpam> request, final Pimpam entity) {
 		assert request != null;
 		assert entity != null;
 
 		this.repository.save(entity);
 	}
-
 
 }
