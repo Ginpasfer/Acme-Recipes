@@ -51,7 +51,6 @@
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
 		<acme:menu-suboption code="master.menu.authenticated.systemConfiguration.show" action="/authenticated/system-configuration/show"/>
 			<acme:menu-suboption code="master.menu.authenticated.bulletin" action="/authenticated/bulletin/list"/>
-			<acme:menu-suboption code="master.menu.user-account.chef.pimpam.list" action="/authenticated/pimpam/list"/>
 		</acme:menu-option>
 		
 		
