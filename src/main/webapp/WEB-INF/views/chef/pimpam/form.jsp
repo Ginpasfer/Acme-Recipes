@@ -20,9 +20,9 @@
 	<acme:input-money code="chef.pimpam.form.label.presupuesto" path="presupuesto"/>
 	<jstl:choose>
 		<jstl:when test="${command == 'create'}">
-			<acme:input-select code="chef.pimpam.form.label.item" path="itemName">
-	   			<jstl:forEach items="${items}" var="item">
-					<acme:input-option code="${item.getId()}" value="${item.getName()}" selected="${ item.getId() == itemName }"/>
+			<acme:input-select code="chef.pimpam.list.label.item" path="itemId">
+	   			<jstl:forEach items="${items}" var="i">
+					<acme:input-option code="${i.getName()}" value="${i.getId()}" selected="${ i.getId() == itemId }"/>
 				</jstl:forEach>
 			</acme:input-select>
 		</jstl:when>
@@ -37,7 +37,7 @@
 			<acme:input-money readonly="true" code="epicure.dish.form.label.money" path="money" />
 		</jstl:when>
 	</jstl:choose> --%>
-	<acme:input-textbox code="chef.pimpam.list.label.enlace" path="enlace"/>
+	<acme:input-textbox code="chef.pimpam.form.label.enlace" path="enlace"/>
 	
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(command, 'show, update, delete')}">		

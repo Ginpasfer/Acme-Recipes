@@ -28,10 +28,7 @@ public class ChefPimpamListService implements AbstractListService<Chef, Pimpam> 
 	
 	@Autowired
 	protected ChefPimpamRepository repository;
-//
-//	@Autowired
-//	protected ChefItemMoneyExchange chefItemMoneyExchange;
-	
+
 	@Override
 	public boolean authorise(final Request<Pimpam> request) {
 		assert request != null;
@@ -44,7 +41,7 @@ public class ChefPimpamListService implements AbstractListService<Chef, Pimpam> 
 		
 		final Collection<Pimpam> result;
 		
-		result = this.repository.findPimpamsByChef(request.getPrincipal().getAccountId());
+		result = this.repository.findPimpamsByChef(request.getPrincipal().getActiveRoleId());
 
 		return result;
 	}

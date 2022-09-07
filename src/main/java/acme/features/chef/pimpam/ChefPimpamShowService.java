@@ -55,7 +55,7 @@ public class ChefPimpamShowService implements AbstractShowService<Chef, Pimpam> 
 		assert model != null;
 		
 		model.setAttribute("itemName", entity.getItem().getName());
-		model.setAttribute("items", this.repository.findAllItemsOfChef(request.getPrincipal().getAccountId()));
+		model.setAttribute("items", this.repository.findAllItemsOfChef(request.getPrincipal().getActiveRoleId()));
 		model.setAttribute("itemId", entity.getItem().getId());
 		
 //		final String systemCurrency= this.repository.getDefaultCurrency();
@@ -70,7 +70,6 @@ public class ChefPimpamShowService implements AbstractShowService<Chef, Pimpam> 
 //			} catch (final Exception e) {
 //				model.setAttribute("money", "API unavailable at the moment");
 //			}
-		
 		request.unbind(entity, model, "codigo", "titulo", "fechaCreacion", "descripcion", "periodoInicial", "periodoFinal" ,"presupuesto", "enlace");
 		
 	}
