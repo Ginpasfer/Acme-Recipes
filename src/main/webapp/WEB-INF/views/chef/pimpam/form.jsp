@@ -32,11 +32,11 @@
 			<acme:input-textbox readonly="true" code="chef.pimpam.list.label.item" path="itemName"/>
 		</jstl:when>
 	</jstl:choose>
-	<%-- <jstl:choose>
+	<jstl:choose>
 		<jstl:when test="${command =='show'}">
 			<acme:input-money readonly="true" code="epicure.dish.form.label.money" path="money" />
 		</jstl:when>
-	</jstl:choose> --%>
+	</jstl:choose> 
 	<acme:input-textbox code="chef.pimpam.form.label.enlace" path="enlace"/>
 	
 	<jstl:choose>

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.pimpam.Pimpam;
+import acme.forms.MoneyExchange;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractShowService;
@@ -15,8 +16,8 @@ public class ChefPimpamShowService implements AbstractShowService<Chef, Pimpam> 
 	@Autowired
 	protected ChefPimpamRepository repository;
 	
-//	@Autowired
-//	protected ChefItemMoneyExchange chefItemMoneyExchange;
+	@Autowired
+	protected ChefPimpamMoneyExchange chefPimpamMoneyExchange;
 
 	@Override
 	public boolean authorise(final Request<Pimpam> request) {
@@ -59,18 +60,18 @@ public class ChefPimpamShowService implements AbstractShowService<Chef, Pimpam> 
 		model.setAttribute("itemId", entity.getItem().getId());
 		model.setAttribute("itemPublished", entity.getItem().getPublished());
 		
-//		final String systemCurrency= this.repository.getDefaultCurrency();
-//		 MoneyExchange priceExchanged = null;
-//	     Integer i=0;
-//	        while (priceExchanged == null && i<=50) {
-//	        	priceExchanged=this.chefItemMoneyExchange.computeMoneyExchange(entity.getRetailPrice(), systemCurrency);
-//				i++;
-//			}
-//	        try {
-//				model.setAttribute("money", priceExchanged.getTarget());
-//			} catch (final Exception e) {
-//				model.setAttribute("money", "API unavailable at the moment");
-//			}
+		final String systemCurrency= this.repository.getDefaultCurrency();
+		 MoneyExchange priceExchanged = null;
+	     Integer i=0;
+	        while (priceExchanged == null && i<=50) {
+	        	priceExchanged=this.chefPimpamMoneyExchange.computeMoneyExchange(entity.getPresupuesto(), systemCurrency);
+				i++;
+			}
+	        try {
+				model.setAttribute("money", priceExchanged.getTarget());
+			} catch (final Exception e) {
+				model.setAttribute("money", "API unavailable at the moment");
+			}
 		request.unbind(entity, model, "codigo", "titulo", "fechaCreacion", "descripcion", "periodoInicial", "periodoFinal" ,"presupuesto", "enlace");
 		
 	}
