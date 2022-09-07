@@ -1,5 +1,12 @@
 administrator.dashboard.form.label.title = PANEL DE ADMINISTRADOR
 
+administrator.dashboard.form.label.totalNumberOfItemWithPimpam = Número total de útiles con pimpam
+administrator.dashboard.form.label.averageBudgetOfPimpamGroupedByCurrency = Precio medio de venta de los pimpams
+administrator.dashboard.form.label.deviationBudgetOfPimpamGroupedByCurrency = Desviación del precio de venta de los pimpams
+administrator.dashboard.form.label.minimunBudgetOfPimpamGroupedByCurrency = Precio mínimo de venta de los pimpams
+administrator.dashboard.form.label.maximunBudgetOfPimpamGroupedByCurrency = Precio máximo de venta de los pimpams
+
+
 administrator.dashboard.form.label.totalNumberOfKitchenUtensils = Número total de utensilios de cocina
 administrator.dashboard.form.label.averageRetailPriceOfKitchenUtensilsGroupedByCurrency = Precio medio de venta al público de los utensilios de cocina
 administrator.dashboard.form.label.deviationRetailPriceOfKitchenUtensilsGroupedByCurrency = Desviación del precio de venta al público de los utensilios de cocina

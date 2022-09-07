@@ -51,6 +51,7 @@
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
 		<acme:menu-suboption code="master.menu.authenticated.systemConfiguration.show" action="/authenticated/system-configuration/show"/>
 			<acme:menu-suboption code="master.menu.authenticated.bulletin" action="/authenticated/bulletin/list"/>
+			<acme:menu-suboption code="master.menu.user-account.chef.pimpam.list" action="/authenticated/pimpam/list"/>
 		</acme:menu-option>
 		
 		
@@ -61,11 +62,13 @@
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.chef" access="hasRole('Chef')">
-			<acme:menu-suboption code="master.menu.chef.item.create" action="/chef/item/create"/>	
+			<acme:menu-suboption code="master.menu.chef.item.create" action="/chef/item/create"/>
+			<acme:menu-suboption code="master.menu.chef.pimpam.create" action="/chef/pimpam/create"/>		
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.chef.dish-list" action="/chef/dish/list"/>
 			<acme:menu-suboption code="master.menu.user-account.chef.item.list.ingredient" action="/chef/item/list-ingredients"/>
 			<acme:menu-suboption code="master.menu.user-account.chef.item.list.kitchenUtensils" action="/chef/item/list-kitchen_utensils"/>
+			<acme:menu-suboption code="master.menu.user-account.chef.pimpam.list" action="/chef/pimpam/list"/>
 			<acme:menu-suboption code="master.menu.user-account.chef.item.list.recipe" action="/chef/recipe/list"/>
 			<acme:menu-suboption code="master.menu.chef.memorandum-list" action="/chef/memorandum/list-all"/> 
 			

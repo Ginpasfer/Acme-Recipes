@@ -1,0 +1,19 @@
+chef.item.list.label.name = Nombre
+chef.item.list.label.code = Código
+chef.item.list.label.description = Descripción
+chef.item.list.label.retailprice = Precio
+chef.item.list.label.type = Tipo
+chef.item.list.label.link = Enlace
+chef.item.list.label.published = Publicado
+chef.item.list.label.money = Precio en la moneda del sistema
+chef.item.form.label.ingredient = Ingrediente
+chef.item.form.label.kitchen_utensil = Utensilio de cocina
+chef.item.form.button.update = Actualizar
+chef.item.form.button.delete = Eliminar
+chef.item.form.button.publish = Publicar
+chef.item.form.button.create = Crear
+
+chef.item.form.error.retail-price-currency-invalid = Esta moneda no está permitida
+chef.item.form.error.retail-price-amount-negative-or-zero = La cantidad no puede ser cero, ni negativa
+chef.item.form.error.duplicated = Este código ya existe
+chef.item.form.error.link = El formato del link es inválido
