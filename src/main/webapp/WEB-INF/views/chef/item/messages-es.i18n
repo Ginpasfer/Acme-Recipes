@@ -17,3 +17,6 @@ chef.item.form.error.retail-price-currency-invalid = Esta moneda no está permit
 chef.item.form.error.retail-price-amount-negative-or-zero = La cantidad no puede ser cero, ni negativa
 chef.item.form.error.duplicated = Este código ya existe
 chef.item.form.error.link = El formato del link es inválido
+
+chef.item.create-item-no-item = Crea un item
+chef.item.no-item= No hay items disponibles. Crea y publica uno
