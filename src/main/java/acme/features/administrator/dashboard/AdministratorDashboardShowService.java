@@ -56,6 +56,29 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			minimumRetailPriceOfUtensilByCurrency.put(currency, min);
 			maximumRetailPriceOfUtensilByCurrency.put(currency, max);
 		}
+		
+		Integer totalNumberOfItemWithPimpam;
+		totalNumberOfItemWithPimpam = this.repository.totalNumberOfPimpam();
+
+		final Map<String, Double> averageBudgetOfPimpamGroupedByCurrency = new HashMap<>();
+		final Map<String, Double> deviationBudgetOfPimpamGroupedByCurrency = new HashMap<>();
+		final Map<String, Double> minimunBudgetOfPimpamGroupedByCurrency = new HashMap<>();
+		final Map<String, Double> maximunBudgetOfPimpamGroupedByCurrency = new HashMap<>();
+		
+		final List<Object[]> metricsPimpamByCurrency = this.repository.findMetricsPimpamsByCurrency();
+
+		for (final Object[] fila : metricsPimpamByCurrency) {
+			final String currency = (String) fila[0];
+			final Double avg = (Double) fila[1];
+			final Double stdev = (Double) fila[2];
+			final Double min = (Double) fila[3];
+			final Double max = (Double) fila[4];
+
+			averageBudgetOfPimpamGroupedByCurrency.put(currency, avg);
+			deviationBudgetOfPimpamGroupedByCurrency.put(currency, stdev);
+			minimunBudgetOfPimpamGroupedByCurrency.put(currency, min);
+			maximunBudgetOfPimpamGroupedByCurrency.put(currency, max);
+		}
 
 		Integer totalNumberOfIngredients;
 		totalNumberOfIngredients = this.repository.totalNumberOfIngredients();
@@ -79,6 +102,9 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			minimumRetailPriceOfIngredientsByCurrency.put(currency, min);
 			maximumRetailPriceOfIngredientsByCurrency.put(currency, max);
 		}
+		
+		
+		
 		Integer totalNumberOfProposedDish;
 		Double averageBudgetOfProposedDish;
 		Double deviationBudgetOfProposedDish;
@@ -123,6 +149,12 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setMinimunRetailPriceOfKitchenUtensilsGroupedByCurrency(minimumRetailPriceOfUtensilByCurrency);
 		result.setMaximunRetailPriceOfKitchenUtensilsGroupedByCurrency(maximumRetailPriceOfUtensilByCurrency);
 
+		result.setTotalNumberOfItemWithPimpam(totalNumberOfItemWithPimpam);
+		result.setAverageBudgetOfPimpamGroupedByCurrency(averageBudgetOfPimpamGroupedByCurrency);
+		result.setDeviationBudgetOfPimpamGroupedByCurrency(deviationBudgetOfPimpamGroupedByCurrency);
+		result.setMinimunBudgetOfPimpamGroupedByCurrency(minimunBudgetOfPimpamGroupedByCurrency);
+		result.setMaximunBudgetOfPimpamGroupedByCurrency(maximunBudgetOfPimpamGroupedByCurrency);
+		
 		result.setTotalNumberOfIngredients(totalNumberOfIngredients);
 		result.setAverageRetailPriceOfIngredientsGroupedByCurrency(averageRetailPriceOfIngredientsByCurrency);
 		result.setDeviationRetailPriceOfIngredientsGroupedByCurrency(deviationRetailPriceOfIngredientsByCurrency);
@@ -181,13 +213,20 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 				"minimunBudgetOfFineDishesDenied",
 				"maximunBudgetOfFineDishesProposed",
 				"maximunBudgetOfFineDishesAccepted",
-				"maximunBudgetOfFineDishesDenied");
+				"maximunBudgetOfFineDishesDenied",
+				"totalNumberOfItemWithPimpam",
+				"averageBudgetOfPimpamGroupedByCurrency",
+				"deviationBudgetOfPimpamGroupedByCurrency",
+				"minimunBudgetOfPimpamGroupedByCurrency",
+				"maximunBudgetOfPimpamGroupedByCurrency");
 		
 		final Set<String> currencyIngredients = entity.getDeviationRetailPriceOfIngredientsGroupedByCurrency().keySet();
-        final Set<String> currencyUtensil = entity.getDeviationRetailPriceOfKitchenUtensilsGroupedByCurrency().keySet();
+    final Set<String> currencyUtensil = entity.getDeviationRetailPriceOfKitchenUtensilsGroupedByCurrency().keySet();
+    final Set<String> currencyPimpam = entity.getDeviationBudgetOfPimpamGroupedByCurrency().keySet();
 
         model.setAttribute("currencyI", currencyIngredients);
         model.setAttribute("currencyU", currencyUtensil);
+        model.setAttribute("currencyP", currencyPimpam);
 
 	}
 

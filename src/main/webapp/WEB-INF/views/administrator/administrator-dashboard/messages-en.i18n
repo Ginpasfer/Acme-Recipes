@@ -1,5 +1,12 @@
 administrator.dashboard.form.label.title = ADMINISTRATOR DASHBOARD
 
+administrator.dashboard.form.label.totalNumberOfItemWithPimpam = Total number of item with pimpams
+administrator.dashboard.form.label.averageBudgetOfPimpamGroupedByCurrency = Average retail price of pimpams
+administrator.dashboard.form.label.deviationBudgetOfPimpamGroupedByCurrency = Deviation retail price of pimpams
+administrator.dashboard.form.label.minimunBudgetOfPimpamGroupedByCurrency = Minimun retail price of pimpams
+administrator.dashboard.form.label.maximunBudgetOfPimpamGroupedByCurrency = Maximun retail price of pimpams
+
+
 administrator.dashboard.form.label.totalNumberOfKitchenUtensils = Total number of kitchen utensils
 administrator.dashboard.form.label.averageRetailPriceOfKitchenUtensilsGroupedByCurrency = Average retail price of kitchen utensils
 administrator.dashboard.form.label.deviationRetailPriceOfKitchenUtensilsGroupedByCurrency = Deviation retail price of kitchen utensils

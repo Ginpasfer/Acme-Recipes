@@ -56,4 +56,13 @@ public class AdministratorDashboard implements Serializable{
 	Double maximunBudgetOfFineDishesProposed;
 	Double maximunBudgetOfFineDishesAccepted;
 	Double maximunBudgetOfFineDishesDenied;
+	
+	//Pimpams
+	@Min(0)
+	Integer totalNumberOfItemWithPimpam;
+	Map<String,Double> averageBudgetOfPimpamGroupedByCurrency;
+	Map<String,Double> deviationBudgetOfPimpamGroupedByCurrency;
+	Map<String,Double> minimunBudgetOfPimpamGroupedByCurrency;
+	Map<String,Double> maximunBudgetOfPimpamGroupedByCurrency;
+	
 }

@@ -1,0 +1,20 @@
+chef.pimpam.list.label.titulo = Title
+chef.pimpam.list.label.item = Item
+chef.pimpam.form.label.codigo = Code
+chef.pimpam.form.label.descripcion = Description
+chef.pimpam.form.label.fechaCreacion = Instantiation moment
+chef.pimpam.form.label.periodoInicial = Initial period
+chef.pimpam.form.label.periodoFinal = Final period
+chef.pimpam.form.label.presupuesto = Budget
+chef.pimpam.form.label.enlace = Link
+chef.pimpam.form.label.money = Price on system currency
+chef.pimpam.form.button.update = Update
+chef.pimpam.form.button.delete = Delete
+chef.pimpam.form.button.create = Create
+
+
+chef.pimpam.form.error.retail-price-currency-invalid = This currency is not allowed
+chef.pimpam.form.error.retail-price-amount-negative-or-zero = The amount can not be negative or zero
+chef.pimpam.form.error.duplicated = This code already exist
+chef.pimpam.form.error.enlace = The link format is invalid
+chef.pimpam.form.error.one-week = At least one week long

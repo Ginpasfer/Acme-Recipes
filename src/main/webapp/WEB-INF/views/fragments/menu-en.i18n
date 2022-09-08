@@ -75,6 +75,9 @@ master.menu.user-account.chef.item.list.recipe = List my recipes
 master.menu.chef.memorandum-list = List my memorandums
 master.menu.chef.item.create = Create an item
 
+master.menu.chef.pimpam.create = Create a pimpam
+master.menu.user-account.chef.pimpam.list = List my pimpams
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
