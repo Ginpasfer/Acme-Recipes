@@ -1,8 +1,11 @@
 package acme.features.chef.pimpam;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.apache.commons.lang3.time.DateUtils;
@@ -59,6 +62,49 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 		request.unbind(entity, model, "codigo", "fechaCreacion", "titulo", "descripcion", "periodoInicial", "periodoFinal" ,"presupuesto", "enlace");
 	}
 
+	
+	private String generateCode(final Integer id) {
+		String result;
+		
+		final Date date = new Date();
+		final ZoneId timeZone = ZoneId.systemDefault();
+		final LocalDate getLocalDate = date.toInstant().atZone(timeZone).toLocalDate();
+		
+		final Integer year = getLocalDate.getYear();
+		final Integer month = getLocalDate.getMonthValue();
+		final Integer day = getLocalDate.getDayOfMonth();
+		
+		final String anyo = year.toString().substring(2);
+		String mes = month.toString();
+		String dia = day.toString();
+		
+		String cod="";
+		Integer seq=0;
+		
+		final List<Pimpam> pimpam = (List<Pimpam>) this.repository.findPimpamsByChef(id);
+		if (pimpam.isEmpty()) {
+			seq = 1;
+			cod="0"+seq.toString();
+		}else if(!pimpam.isEmpty() && seq <=9){
+			seq = seq+pimpam.size();
+			cod="0"+seq.toString();
+		}else{
+			seq = seq+pimpam.size();
+			cod=seq.toString();
+		}
+		
+		if(mes.length()==1) {
+			mes = "0" + mes;
+		}
+		
+		if(day.toString().length()==1) {
+			dia = "0" + dia.toString();
+		}
+		
+		result = "AA" + cod +"AA" + "-" + mes + dia + anyo;
+		return result;
+	}
+	
 	@Override
 	public Pimpam instantiate(final Request<Pimpam> request) {
 		assert request != null;
@@ -73,10 +119,11 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 		initialD = DateUtils.addMonths( new Date(System.currentTimeMillis() + 300000),1);
 		finalD = DateUtils.addWeeks( initialD,1);
 		finalD = DateUtils.addMinutes(finalD, 1);
-
+		final String codigo = this.generateCode(request.getPrincipal().getActiveRoleId());
 	
 		result = new Pimpam();
-		result.setCodigo("");
+		
+		result.setCodigo(codigo);
 		result.setFechaCreacion(moment);
 		result.setTitulo("");
 		result.setDescripcion("");

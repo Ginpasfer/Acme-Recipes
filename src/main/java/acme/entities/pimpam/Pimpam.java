@@ -33,7 +33,7 @@ public class Pimpam extends AbstractEntity{
 	
 	
 	@NotBlank
-	@Pattern(regexp="^([A-Z]{2}:)?[A-Z]{3}-[0-9]{3}$", message="Incorrect format, follow the example JE:DBV-201")
+	@Pattern(regexp="^[A-Za-z]{2}[0-9]{2}[A-Za-z]{2}-(0[1-9]|1[0-2])([0-2][0-9]|3[0-1])([0-2]{2})$", message="Incorrect format, follow the example AA00AA-010122")
 	@Column(unique=true)
 	protected String codigo;
 	

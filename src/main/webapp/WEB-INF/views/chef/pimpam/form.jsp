@@ -5,14 +5,7 @@
 
 <acme:form readonly="false"> 
 	<acme:input-textbox code="chef.pimpam.list.label.titulo" path="titulo"/>
-	<jstl:choose>
-		<jstl:when test="${command == 'create'}">	
-    		<acme:input-textbox code="chef.pimpam.form.label.codigo" path="codigo"/>
-    	</jstl:when>
-		<jstl:when test="${acme:anyOf(command, 'show, update, delete')}">
-			<acme:input-textbox readonly="true" code="chef.pimpam.form.label.codigo" path="codigo"/>
-		</jstl:when>
-	</jstl:choose>
+	<acme:input-textbox readonly="true" code="chef.pimpam.form.label.codigo" path="codigo"/>
 	<acme:input-moment readonly="true" code="chef.pimpam.form.label.fechaCreacion" path="fechaCreacion"/>
 	<acme:input-textarea code="chef.pimpam.form.label.descripcion" path="descripcion"/>
 	<acme:input-moment code="chef.pimpam.form.label.periodoInicial" path="periodoInicial" />
