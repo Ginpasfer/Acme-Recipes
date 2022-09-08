@@ -85,11 +85,11 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 		if (pimpam.isEmpty()) {
 			seq = 1;
 			cod="0"+seq.toString();
-		}else if(!pimpam.isEmpty() && seq <=9){
-			seq = seq+pimpam.size();
+		}else if(!pimpam.isEmpty() && pimpam.size() < 9){
+			seq = pimpam.size()+1;
 			cod="0"+seq.toString();
 		}else{
-			seq = seq+pimpam.size();
+			seq = pimpam.size()+1;
 			cod=seq.toString();
 		}
 		
