@@ -1,10 +1,10 @@
 administrator.dashboard.form.label.title = ADMINISTRATOR DASHBOARD
 
-administrator.dashboard.form.label.totalNumberOfItemWithDelor = Total number of item with delors
-administrator.dashboard.form.label.averageBudgetOfDelorGroupedByCurrency = Average retail price of delors
-administrator.dashboard.form.label.deviationBudgetOfDelorGroupedByCurrency = Deviation retail price of delors
-administrator.dashboard.form.label.minimunBudgetOfDelorGroupedByCurrency = Minimun retail price of delors
-administrator.dashboard.form.label.maximunBudgetOfDelorGroupedByCurrency = Maximun retail price of delors
+administrator.dashboard.form.label.totalNumberOfItemWithDelor = Total number of ingredients with delors
+administrator.dashboard.form.label.averageIncomeOfDelorGroupedByCurrency = Average income of delors
+administrator.dashboard.form.label.deviationIncomeOfDelorGroupedByCurrency = Deviation income of delors
+administrator.dashboard.form.label.minimunIncomeOfDelorGroupedByCurrency = Minimun income of delors
+administrator.dashboard.form.label.maximunIncomeOfDelorGroupedByCurrency = Maximun income of delors
 
 
 administrator.dashboard.form.label.totalNumberOfKitchenUtensils = Total number of kitchen utensils

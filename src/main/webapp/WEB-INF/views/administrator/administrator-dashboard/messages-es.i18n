@@ -1,10 +1,10 @@
 administrator.dashboard.form.label.title = PANEL DE ADMINISTRADOR
 
-administrator.dashboard.form.label.totalNumberOfItemWithDelor = Número total de útiles con delor
-administrator.dashboard.form.label.averageBudgetOfDelorGroupedByCurrency = Precio medio de venta de los delors
-administrator.dashboard.form.label.deviationBudgetOfDelorGroupedByCurrency = Desviación del precio de venta de los delors
-administrator.dashboard.form.label.minimunBudgetOfDelorGroupedByCurrency = Precio mínimo de venta de los delors
-administrator.dashboard.form.label.maximunBudgetOfDelorGroupedByCurrency = Precio máximo de venta de los delors
+administrator.dashboard.form.label.totalNumberOfItemWithDelor = Número total de ingredientes con delor
+administrator.dashboard.form.label.averageIncomeOfDelorGroupedByCurrency = Ingreso medio de los delors
+administrator.dashboard.form.label.deviationIncomeOfDelorGroupedByCurrency = Desviación de los ingresos de los delors
+administrator.dashboard.form.label.minimunIncomeOfDelorGroupedByCurrency = Ingreso mínimo de los delors
+administrator.dashboard.form.label.maximunIncomeOfDelorGroupedByCurrency = Ingreso máximo de los delors
 
 
 administrator.dashboard.form.label.totalNumberOfKitchenUtensils = Número total de utensilios de cocina

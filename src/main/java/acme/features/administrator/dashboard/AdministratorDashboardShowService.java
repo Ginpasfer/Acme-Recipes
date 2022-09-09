@@ -60,10 +60,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		Integer totalNumberOfItemWithDelor;
 		totalNumberOfItemWithDelor = this.repository.totalNumberOfDelor();
 
-		final Map<String, Double> averageBudgetOfDelorGroupedByCurrency = new HashMap<>();
-		final Map<String, Double> deviationBudgetOfDelorGroupedByCurrency = new HashMap<>();
-		final Map<String, Double> minimunBudgetOfDelorGroupedByCurrency = new HashMap<>();
-		final Map<String, Double> maximunBudgetOfDelorGroupedByCurrency = new HashMap<>();
+		final Map<String, Double> averageIncomeOfDelorGroupedByCurrency = new HashMap<>();
+		final Map<String, Double> deviationIncomeOfDelorGroupedByCurrency = new HashMap<>();
+		final Map<String, Double> minimunIncomeOfDelorGroupedByCurrency = new HashMap<>();
+		final Map<String, Double> maximunIncomeOfDelorGroupedByCurrency = new HashMap<>();
 		
 		final List<Object[]> metricsDelorByCurrency = this.repository.findMetricsDelorsByCurrency();
 
@@ -74,10 +74,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			final Double min = (Double) fila[3];
 			final Double max = (Double) fila[4];
 
-			averageBudgetOfDelorGroupedByCurrency.put(currency, avg);
-			deviationBudgetOfDelorGroupedByCurrency.put(currency, stdev);
-			minimunBudgetOfDelorGroupedByCurrency.put(currency, min);
-			maximunBudgetOfDelorGroupedByCurrency.put(currency, max);
+			averageIncomeOfDelorGroupedByCurrency.put(currency, avg);
+			deviationIncomeOfDelorGroupedByCurrency.put(currency, stdev);
+			minimunIncomeOfDelorGroupedByCurrency.put(currency, min);
+			maximunIncomeOfDelorGroupedByCurrency.put(currency, max);
 		}
 
 		Integer totalNumberOfIngredients;
@@ -150,10 +150,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setMaximunRetailPriceOfKitchenUtensilsGroupedByCurrency(maximumRetailPriceOfUtensilByCurrency);
 
 		result.setTotalNumberOfItemWithDelor(totalNumberOfItemWithDelor);
-		result.setAverageBudgetOfDelorGroupedByCurrency(averageBudgetOfDelorGroupedByCurrency);
-		result.setDeviationBudgetOfDelorGroupedByCurrency(deviationBudgetOfDelorGroupedByCurrency);
-		result.setMinimunBudgetOfDelorGroupedByCurrency(minimunBudgetOfDelorGroupedByCurrency);
-		result.setMaximunBudgetOfDelorGroupedByCurrency(maximunBudgetOfDelorGroupedByCurrency);
+		result.setAverageIncomeOfDelorGroupedByCurrency(averageIncomeOfDelorGroupedByCurrency);
+		result.setDeviationIncomeOfDelorGroupedByCurrency(deviationIncomeOfDelorGroupedByCurrency);
+		result.setMinimunIncomeOfDelorGroupedByCurrency(minimunIncomeOfDelorGroupedByCurrency);
+		result.setMaximunIncomeOfDelorGroupedByCurrency(maximunIncomeOfDelorGroupedByCurrency);
 		
 		result.setTotalNumberOfIngredients(totalNumberOfIngredients);
 		result.setAverageRetailPriceOfIngredientsGroupedByCurrency(averageRetailPriceOfIngredientsByCurrency);
@@ -215,14 +215,14 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 				"maximunBudgetOfFineDishesAccepted",
 				"maximunBudgetOfFineDishesDenied",
 				"totalNumberOfItemWithDelor",
-				"averageBudgetOfDelorGroupedByCurrency",
-				"deviationBudgetOfDelorGroupedByCurrency",
-				"minimunBudgetOfDelorGroupedByCurrency",
-				"maximunBudgetOfDelorGroupedByCurrency");
+				"averageIncomeOfDelorGroupedByCurrency",
+				"deviationIncomeOfDelorGroupedByCurrency",
+				"minimunIncomeOfDelorGroupedByCurrency",
+				"maximunIncomeOfDelorGroupedByCurrency");
 		
 		final Set<String> currencyIngredients = entity.getDeviationRetailPriceOfIngredientsGroupedByCurrency().keySet();
     final Set<String> currencyUtensil = entity.getDeviationRetailPriceOfKitchenUtensilsGroupedByCurrency().keySet();
-    final Set<String> currencyDelor = entity.getDeviationBudgetOfDelorGroupedByCurrency().keySet();
+    final Set<String> currencyDelor = entity.getDeviationIncomeOfDelorGroupedByCurrency().keySet();
 
         model.setAttribute("currencyI", currencyIngredients);
         model.setAttribute("currencyU", currencyUtensil);

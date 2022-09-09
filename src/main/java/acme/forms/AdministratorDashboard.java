@@ -60,9 +60,9 @@ public class AdministratorDashboard implements Serializable{
 	//Delors
 	@Min(0)
 	Integer totalNumberOfItemWithDelor;
-	Map<String,Double> averageBudgetOfDelorGroupedByCurrency;
-	Map<String,Double> deviationBudgetOfDelorGroupedByCurrency;
-	Map<String,Double> minimunBudgetOfDelorGroupedByCurrency;
-	Map<String,Double> maximunBudgetOfDelorGroupedByCurrency;
+	Map<String,Double> averageIncomeOfDelorGroupedByCurrency;
+	Map<String,Double> deviationIncomeOfDelorGroupedByCurrency;
+	Map<String,Double> minimunIncomeOfDelorGroupedByCurrency;
+	Map<String,Double> maximunIncomeOfDelorGroupedByCurrency;
 	
 }
