@@ -17,8 +17,8 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("SELECT i.retailPrice.currency ,avg(i.retailPrice.amount),stddev(i.retailPrice.amount),min(i.retailPrice.amount),max(i.retailPrice.amount) FROM Item i WHERE i.itemType = acme.entities.item.ItemType.INGREDIENT GROUP BY i.retailPrice.currency")
 	List<Object[]> findMetricsIngredientsByCurrency();
 	
-	@Query("SELECT p.presupuesto.currency ,avg(p.presupuesto.amount),stddev(p.presupuesto.amount),min(p.presupuesto.amount),max(p.presupuesto.amount) FROM Pimpam p GROUP BY p.presupuesto.currency")
-	List<Object[]> findMetricsPimpamsByCurrency();
+	@Query("SELECT p.income.currency ,avg(p.income.amount),stddev(p.income.amount),min(p.income.amount),max(p.income.amount) FROM Delor p GROUP BY p.income.currency")
+	List<Object[]> findMetricsDelorsByCurrency();
 	
 	
 	@Query("select count(i) from Item i where i.itemType = 0")
@@ -27,8 +27,8 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select count(i) from Item i where i.itemType = 1")
 	Integer totalNumberOfIngredients();
 	
-	@Query("select count(p) from Pimpam p")
-	Integer totalNumberOfPimpam();
+	@Query("select count(p) from Delor p")
+	Integer totalNumberOfDelor();
 	
 	
 	@Query("select count(p) from Dish p where p.status = 0")

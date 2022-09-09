@@ -1,0 +1,5 @@
+record-index,key,subject,keylet,instantiationMoment,explanation,initialPeriod,finalPeriod,income,moreInfo,itemName
+0,delor-01,delor01,000001:220101,2022/09/03 10:11,Esto es un delor,2022/10/05 10:11,2022/10/15 10:11,EUR 150.00,,ingrediente01
+1,delor-02,delor02,000002:220101,2022/09/04 10:11,Esto es un delor,2022/10/06 10:11,2022/10/16 10:11,EUR 300.00,https://google.com,ingrediente04
+2,delor-03,delor03,000003:220101,2022/09/05 10:11,Esto es un delor,2022/10/07 10:11,2022/10/16 10:11,GBP 9.00,,ingrediente06
+3,delor-04,delor04,000004:220101,2022/09/06 10:11,Esto es un delor,2022/10/07 10:11,2022/10/17 10:11,EUR 0.99,,ingrediente10

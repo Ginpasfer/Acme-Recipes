@@ -62,12 +62,12 @@
 
 		<acme:menu-option code="master.menu.chef" access="hasRole('Chef')">
 			<acme:menu-suboption code="master.menu.chef.item.create" action="/chef/item/create"/>
-			<acme:menu-suboption code="master.menu.chef.pimpam.create" action="/chef/pimpam/create"/>		
+			<acme:menu-suboption code="master.menu.chef.delor.create" action="/chef/delor/create"/>		
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.chef.dish-list" action="/chef/dish/list"/>
 			<acme:menu-suboption code="master.menu.user-account.chef.item.list.ingredient" action="/chef/item/list-ingredients"/>
 			<acme:menu-suboption code="master.menu.user-account.chef.item.list.kitchenUtensils" action="/chef/item/list-kitchen_utensils"/>
-			<acme:menu-suboption code="master.menu.user-account.chef.pimpam.list" action="/chef/pimpam/list"/>
+			<acme:menu-suboption code="master.menu.user-account.chef.delor.list" action="/chef/delor/list"/>
 			<acme:menu-suboption code="master.menu.user-account.chef.item.list.recipe" action="/chef/recipe/list"/>
 			<acme:menu-suboption code="master.menu.chef.memorandum-list" action="/chef/memorandum/list-all"/> 
 			

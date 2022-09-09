@@ -1,4 +1,4 @@
-package acme.features.chef.pimpam;
+package acme.features.chef.delor;
 import java.util.Date;
 
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ import acme.framework.roles.Authenticated;
 import acme.framework.services.AbstractPerformService;
 
 @Service
-public class ChefPimpamMoneyExchange implements AbstractPerformService<Authenticated, MoneyExchange> {
+public class ChefDelorMoneyExchange implements AbstractPerformService<Authenticated, MoneyExchange> {
 
 	// AbstractPerformService<Authenticated, ExchangeRecord> interface ---------
 

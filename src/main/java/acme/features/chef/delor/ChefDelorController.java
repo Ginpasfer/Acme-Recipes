@@ -1,32 +1,32 @@
-package acme.features.chef.pimpam;
+package acme.features.chef.delor;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import acme.entities.pimpam.Pimpam;
+import acme.entities.delor.Delor;
 import acme.framework.controllers.AbstractController;
 import acme.roles.Chef;
 
 
 @Controller
-public class ChefPimpamController extends AbstractController<Chef,Pimpam> {
+public class ChefDelorController extends AbstractController<Chef,Delor> {
 	
 	@Autowired
-	protected ChefPimpamListService listService;
+	protected ChefDelorListService listService;
 		
 	@Autowired
-	protected ChefPimpamShowService showService;
+	protected ChefDelorShowService showService;
 	
 	@Autowired
-	protected ChefPimpamCreateService createService;
+	protected ChefDelorCreateService createService;
 	
 	@Autowired
-	protected ChefPimpamDeleteService deleteService;
+	protected ChefDelorDeleteService deleteService;
 	
 	@Autowired
-	protected ChefPimpamUpdateService updateService;
+	protected ChefDelorUpdateService updateService;
 	
 
 	@PostConstruct

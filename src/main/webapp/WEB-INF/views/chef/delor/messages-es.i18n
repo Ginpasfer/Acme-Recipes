@@ -1,0 +1,20 @@
+chef.delor.list.label.subject = Tema
+chef.delor.list.label.item = Ingrediente
+chef.delor.form.label.keylet = Keylet
+chef.delor.form.label.explanation = Explicación
+chef.delor.form.label.instantiationMoment = Fecha de creación
+chef.delor.form.label.initialPeriod = Inicio del período
+chef.delor.form.label.finalPeriod = Final del período
+chef.delor.form.label.income = Ingresos
+chef.delor.form.label.moreInfo = Más información
+chef.delor.form.label.money = Ingresos en moneda por defecto
+chef.delor.form.button.update = Actualizar
+chef.delor.form.button.delete = Borrar
+chef.delor.form.button.create = Crear
+
+
+chef.item.form.error.retail-price-currency-invalid = Esta moneda no está permitida
+chef.item.form.error.retail-price-amount-negative-or-zero = La cantidad no puede ser cero, ni negativa
+chef.item.form.error.duplicated = Este código ya existe
+chef.item.form.error.link = El formato del link es inválido
+chef.delor.form.error.one-week = Al menos con una semana de diferencia

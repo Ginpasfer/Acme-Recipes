@@ -4,6 +4,6 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="chef.pimpam.list.label.titulo" path="titulo"/>
-	<acme:list-column code="chef.pimpam.list.label.item" path="itemName"/>
+	<acme:list-column code="chef.delor.list.label.subject" path="subject"/>
+	<acme:list-column code="chef.delor.list.label.item" path="itemName"/>
 </acme:list>

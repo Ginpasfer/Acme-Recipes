@@ -1,4 +1,4 @@
-package acme.entities.pimpam;
+package acme.entities.delor;
 
 
 
@@ -26,47 +26,47 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Pimpam extends AbstractEntity{
+public class Delor extends AbstractEntity{
 	
 	
 	protected static final long serialVersionUID = 1L;
 	
 	
 	@NotBlank
-	@Pattern(regexp="^[A-Za-z]{2}[0-9]{2}[A-Za-z]{2}-(0[1-9]|1[0-2])([0-2][0-9]|3[0-1])([0-2]{2})$", message="Incorrect format, follow the example AA00AA-010122")
+	@Pattern(regexp="^[0-9]{6}:(([0-2]{2}0[1-9]|1[0-2])([0-2][0-9]|3[0-1]))$", message="Incorrect format, follow the example 000000:220101")
 	@Column(unique=true)
-	protected String codigo;
+	protected String keylet;
 	
 	@Past
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date fechaCreacion;
+	private Date instantiationMoment;
 	
 	@NotBlank
 	@Size(max=100)
-	protected String titulo;
+	protected String subject;
 	
 	
 	@NotBlank
 	@Size(max=255)
-	protected String descripcion;
+	protected String explanation;
 	
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	protected Date periodoInicial;
+	protected Date initialPeriod;
 	
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	protected Date periodoFinal;
+	protected Date finalPeriod;
 	
 	
 	@NotNull
 	@Valid
-	protected Money presupuesto;
+	protected Money income;
 	
 
 	@URL
-	protected String enlace;
+	protected String moreInfo;
 	
 
 	@NotNull

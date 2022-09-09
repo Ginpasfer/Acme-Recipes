@@ -76,8 +76,8 @@ master.menu.chef.memorandum-list = Lista de mis memorandums
 
 master.menu.chef.item.create = Crear artículo
 
-master.menu.chef.pimpam.create = Crear pimpam
-master.menu.user-account.chef.pimpam.list = Lista de mis pimpams
+master.menu.chef.delor.create = Crear delor
+master.menu.user-account.chef.delor.list = Lista de mis delors
 
 
 # master.menu.user-account ####################################################

@@ -1,5 +1,0 @@
-key,titulo,codigo,fechaCreacion,descripcion,periodoInicial,periodoFinal,presupuesto,enlace,key:item
-pimpam-01,pimpam01,AA01AA-010122,2022/09/03 10:11,Esto es un pimpam,2022/10/05 10:11,2022/10/15 10:11,EUR 150.00,,item-01
-pimpam-02,pimpam02,AA02AA-010122,2022/09/04 10:11,Esto es un pimpam,2022/10/06 10:11,2022/10/16 10:11,EUR 300.00,https://google.com,item-04
-pimpam-03,pimpam03,AA03AA-010122,2022/09/05 10:11,Esto es un pimpam,2022/10/07 10:11,2022/10/16 10:11,GBP 9.00,,item-06
-pimpam-04,pimpam04,AA04AA-010122,2022/09/06 10:11,Esto es un pimpam,2022/10/07 10:11,2022/10/17 10:11,EUR 0.99,,item-10

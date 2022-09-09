@@ -9,8 +9,8 @@
 
 <h2>
 	<acme:message
-		code="administrator.dashboard.form.label.totalNumberOfItemWithPimpam" />
-	<acme:print value="${ totalNumberOfItemWithPimpam }" />
+		code="administrator.dashboard.form.label.totalNumberOfItemWithDelor" />
+	<acme:print value="${ totalNumberOfItemWithDelor }" />
 </h2>
 
 <table class="table table-sm">
@@ -19,13 +19,13 @@
 		<tr>
 			<th scope="row"><acme:print value="${ currency }" /></th>
 			<jstl:set
-				value="${ averageBudgetOfPimpamGroupedByCurrency.entrySet().stream().filter(e -> e.getKey().equals(currency)).iterator() }"
+				value="${ averageBudgetOfDelorGroupedByCurrency.entrySet().stream().filter(e -> e.getKey().equals(currency)).iterator() }"
 				var="entrySet" />
 			<jstl:if test="${ entrySet.hasNext() }">
 				<jstl:forEach items="${ entrySet }" var="entry">
 
 					<th scope="row">
-						<acme:message code="administrator.dashboard.form.label.averageBudgetOfPimpamGroupedByCurrency" />
+						<acme:message code="administrator.dashboard.form.label.averageBudgetOfDelorGroupedByCurrency" />
 						<acme:print value="${ entry.getValue() }" />
 					</th>
 
@@ -36,13 +36,13 @@
 		<tr>
 			<th scope="row"><acme:print value="${ currency }" /></th>
 			<jstl:set
-				value="${ deviationBudgetOfPimpamGroupedByCurrency.entrySet().stream().filter(e -> e.getKey().equals(currency)).iterator() }"
+				value="${ deviationBudgetOfDelorGroupedByCurrency.entrySet().stream().filter(e -> e.getKey().equals(currency)).iterator() }"
 				var="entrySet" />
 			<jstl:if test="${ entrySet.hasNext() }">
 				<jstl:forEach items="${ entrySet }" var="entry">
 
 					<th scope="row">
-						<acme:message code="administrator.dashboard.form.label.deviationBudgetOfPimpamGroupedByCurrency"/>
+						<acme:message code="administrator.dashboard.form.label.deviationBudgetOfDelorGroupedByCurrency"/>
 						<acme:print value="${ entry.getValue() }" />
 					</th>
 
@@ -53,13 +53,13 @@
 		<tr>
 			<th scope="row"><acme:print value="${ currency }" /></th>
 			<jstl:set
-				value="${ minimunBudgetOfPimpamGroupedByCurrency.entrySet().stream().filter(e -> e.getKey().equals(currency)).iterator() }"
+				value="${ minimunBudgetOfDelorGroupedByCurrency.entrySet().stream().filter(e -> e.getKey().equals(currency)).iterator() }"
 				var="entrySet" />
 			<jstl:if test="${ entrySet.hasNext() }">
 				<jstl:forEach items="${ entrySet }" var="entry">
 
 					<th scope="row">
-						<acme:message code="administrator.dashboard.form.label.minimunBudgetOfPimpamGroupedByCurrency"/>
+						<acme:message code="administrator.dashboard.form.label.minimunBudgetOfDelorGroupedByCurrency"/>
 						<acme:print value="${ entry.getValue() }" />
 					</th>
 
@@ -70,13 +70,13 @@
 		<tr>
 			<th scope="row"><acme:print value="${ currency }" /></th>
 			<jstl:set
-				value="${ maximunBudgetOfPimpamGroupedByCurrency.entrySet().stream().filter(e -> e.getKey().equals(currency)).iterator() }"
+				value="${ maximunBudgetOfDelorGroupedByCurrency.entrySet().stream().filter(e -> e.getKey().equals(currency)).iterator() }"
 				var="entrySet" />
 			<jstl:if test="${ entrySet.hasNext() }">
 				<jstl:forEach items="${ entrySet }" var="entry">
 
 					<th scope="row">
-						<acme:message code="administrator.dashboard.form.label.maximunBudgetOfPimpamGroupedByCurrency"/>
+						<acme:message code="administrator.dashboard.form.label.maximunBudgetOfDelorGroupedByCurrency"/>
 						<acme:print value="${ entry.getValue() }" />
 					</th>
 

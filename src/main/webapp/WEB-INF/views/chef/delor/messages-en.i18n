@@ -1,0 +1,20 @@
+chef.delor.list.label.subject = Subject
+chef.delor.list.label.item = Ingredient
+chef.delor.form.label.keylet = Keylet
+chef.delor.form.label.explanation = Explanation
+chef.delor.form.label.instantiationMoment = Instantiation moment
+chef.delor.form.label.initialPeriod = Initial period
+chef.delor.form.label.finalPeriod = Final period
+chef.delor.form.label.income = Income
+chef.delor.form.label.moreInfo = More info
+chef.delor.form.label.money = Price on system currency
+chef.delor.form.button.update = Update
+chef.delor.form.button.delete = Delete
+chef.delor.form.button.create = Create
+
+
+chef.delor.form.error.retail-price-currency-invalid = This currency is not allowed
+chef.delor.form.error.retail-price-amount-negative-or-zero = The amount can not be negative or zero
+chef.delor.form.error.duplicated = This code already exist
+chef.delor.form.error.moreInfo = The link format is invalid
+chef.delor.form.error.one-week = At least one week long
