@@ -1,0 +1,4 @@
+record-index,key,titulo,periodoInicial,periodoFinal,descripcion,presupuesto,enlace,item
+1,pimpam-02,pimpam02-updated,2022/11/25 17:40,2022/12/22 17:40,nueva-descripcion,EUR 300.00,https://github.com/,ingrediente04
+1,pimpam-02,pimpam02-updated,2022/11/10 17:40,2022/12/22 17:40,descripcion2,EUR 0.25,https://github.com/,ingrediente04
+1,pimpam-02,pimpam02-updated,2022/11/10 17:40,2022/11/25 17:40,descripcion2,EUR 30.25,https://github.com/,ingrediente04
